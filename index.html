@@ -1,15 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clan Links</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://link.clashofclans.com/images/game/background.webp?v=u6prntz');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    .center-container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+    }
+
+    .custom-button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .custom-button:hover {
+      background-color: white;
+      transform: scale(1.05);
+    }
+
+    .custom-button img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 10%;
+      align-items: center;
+    }
+
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .section img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .section .text {
+      flex: 1;
+      padding: 20px;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .section .text {
+        padding: 20px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    https://link.clashofclans.com/vi/?action=OpenClanProfile&tag=2LPV22V9J
-    https://link.clashofclans.com/vi/?action=OpenClanProfile&tag=2LPV22V9J
-    https://link.clashofclans.com/vi/?action=OpenClanProfile&tag=2LPV22V9J
-    https://link.clashofclans.com/vi/?action=OpenClanProfile&tag=2LPV22V9J
-    https://link.clashofclans.com/vi/?action=OpenClanProfile&tag=2LPV22V9J
+  <!-- Nút ở giữa màn hình -->
+  <div class="center-container">
+    <div class="button-group">
+      <a href="https://link.clashofclans.com/vi/?action=OpenClanProfile&tag=2LPV22V9J" target="_blank" class="custom-button">
+        <img src="https://play-lh.googleusercontent.com/LByrur1mTmPeNr0ljI-uAUcct1rzmTve5Esau1SwoAzjBXQUby6uHIfHbF9TAT51mgHm" alt="Clan 1">
+        Join the CLAN
+      </a>
+
+      <a href="#" target="_blank" class="custom-button">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/2048px-Icon_of_Zalo.svg.png" alt="Zalo">
+        Zalo
+      </a>
+    </div>
+  </div>
+
+  <!-- Các section xen kẽ ảnh + chữ -->
+  <div class="section">
+    <img src="img/main_clan.webp" alt="Ảnh 1">
+    <div class="text">Clan được thành lập vào 12/4/2023. Cách hơn 2 tuần khi tôi chơi Clash of Clans lại.</div>
+  </div>
+
+  <div class="section">
+    <img src="img/main_kinhdo.webp" alt="Ảnh 2">
+    <div class="text">Chỉ với vỏn vẹn 9 tháng chơi, chúng tôi đã cày cấp kinh đô có thể gọi là nhanh, thưởng mỗi kinh đô tuần là hơn 1k7 huy chương đột kích</div>
+  </div>
+
+  <div class="section">
+    <img src="img/history_cwl.webp" alt="Ảnh 3">
+    <div class="text">Trước đó chỉ với vọn vẹn trên dưới 30 người thì chúng tôi đánh lên Vàng 1, khi đấy h10 h11 đánh với h14 h15 khá nhiều!!!</div>
+  </div>
+  <div class="section">
+    <img src="img/streak_nor_war.webp" alt="Ảnh 4">
+    <div class="text">Chuỗi thắng, hoà khá nhiều. Hầu như rất ít trận thua do clan lúc trước rất là nhiệt tình.</div>
+  </div>
+  <div class="section">
+    <img src="img/admin_coc.webp" alt="Ảnh 5">
+    <div class="text">Và đây là Thủ Lĩnh Clan. Chính là tôi kk. Tôi chơi Clash Of CLans vào năm lớp 3 là thời từ 2015 nhưng tôi đã quên acc đó. 21/32023 tôi chơi lại và cũng nghỉ 1 thời gian do ôn thi tốt nghiệp và chán. Hiện tại tôi chơi lại với số cup không tưởng là 5112 cup và chỉ với Town Hall 12.</div>
+  </div>
 </body>
 </html>
