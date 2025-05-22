@@ -40,23 +40,70 @@
             font-size: 14px;
             color: #aaa;
         }
+
+        input[type="password"] {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #00ffcc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00ccaa;
+        }
+
+        .hidden-link {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
     <h1>Danh Sách Link Clash of Clans</h1>
 
     <div class="link-box">
-        <div class="type">Link Base</div>
-        <a href="https://link.clashofclans.com/en/?action=OpenLayout&id=TH17%3AHV%3AAAAATQAAAAHbbi8N7r-tW--Mx7h---v2" target="_blank">
-            Base TH17 của NAVI KLAUS
-        </a>
+        <div class="type">Base VIP</div>
+        <p>Base TH17 của NAVI KLAUS</p>
+        <input type="password" id="vipPass" placeholder="Nhập mật khẩu">
+        <br>
+        <button onclick="checkPassword()">Xác nhận</button>
+        <div id="errorMsg" class="error"></div>
+        <div class="hidden-link" id="vipLink">
+            <a href="https://link.clashofclans.com/en/?action=OpenLayout&id=TH17%3AHV%3AAAAATQAAAAHbbi8N7r-tW--Mx7h---v2" target="_blank">
+                👉 Mở Link VIP
+            </a>
+        </div>
     </div>
 
     <div class="link-box">
-        <div class="type">Link Acc</div>
+        <div class="type">Acc Phong Cảnh đẹp</div>
         <a href="https://link.clashofclans.com/vi?action=OpenPlayerProfile&tag=JL8UPG" target="_blank">
             #JL8UPG
         </a>
     </div>
+
+    <div class="link-box">
+        <div class="type">Clan Hall 9 leo Huyền Thoại</div>
+        <a href="https://link.clashofclans.com/en/?action=OpenClanProfile&tag=2R8VCJQCJ" target="_blank">
+            #2R8VCJQCJ
+        </a>
+    </div>
+
+     <script src="src/base.js"></script>
 </body>
 </html>
