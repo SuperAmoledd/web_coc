@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Clash Of Clans | Game Chó Chơi</title>
+  <title>Clash Of Clans | 1ngv</title>
   <style>
     body {
       margin: 0;
@@ -18,8 +18,10 @@
     .center-container {
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
 
     .button-group {
@@ -57,6 +59,122 @@
       width: 30px;
       height: 30px;
       object-fit: contain;
+    }
+
+    .button-war-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .button-war {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: rgba(255, 200, 0, 0.95);
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .button-war:hover {
+      background-color: #ffdb4d;
+      transform: scale(1.05);
+    }
+
+    .button-war img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+        /* Nút chiến tranh rực lửa */
+    .button-war {
+      position: relative;
+      background-color: #ff5500;
+      color: white;
+      box-shadow: 0 0 20px rgba(255, 100, 0, 0.8), 0 0 40px rgba(255, 50, 0, 0.6);
+      animation: fireGlow 2s infinite ease-in-out;
+      overflow: hidden;
+    }
+
+    .button-war::before,
+    .button-war::after {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background: radial-gradient(circle, rgba(255, 200, 0, 0.4) 0%, transparent 70%);
+      top: -25%;
+      left: -25%;
+      transform: rotate(0deg);
+      animation: pulseFire 3s infinite linear;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .button-war:hover {
+      transform: scale(1.08);
+      background-color: #ff3300;
+      box-shadow: 0 0 25px rgba(255, 100, 0, 0.9), 0 0 50px rgba(255, 50, 0, 0.8);
+    }
+
+    /* Ánh sáng bập bùng */
+    @keyframes fireGlow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 100, 0, 0.7), 0 0 40px rgba(255, 50, 0, 0.6);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 150, 0, 1), 0 0 60px rgba(255, 80, 0, 0.9);
+      }
+    }
+
+    /* Ngọn lửa tỏa sáng */
+    @keyframes pulseFire {
+      0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 0.4;
+      }
+      50% {
+        transform: rotate(180deg) scale(1.05);
+        opacity: 0.6;
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 0.4;
+      }
+    }
+
+    /* hiệu ứng khi bấm vào sẽ rung nhẹ nút */
+
+        @keyframes shakeButton {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-3px); }
+        50% { transform: translateX(3px); }
+        75% { transform: translateX(-3px); }
+        100% { transform: translateX(0); }
+      }
+    
+      .shake {
+        animation: shakeButton 0.3s;
+      }
+    /* asdasdasd */
+
+    .hidden-sections {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .hidden-sections.show {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .section {
@@ -133,57 +251,6 @@
     .image-popup.show img {
       transform: scale(1);
     }
-
-    /* giai dau */
-    .fire-button {
-      background: linear-gradient(45deg, #ff0000, #ff9900);
-      color: white;
-      font-size: 18px;
-      animation: pulse 1.2s infinite;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .fire-button::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 60px;
-      background: radial-gradient(circle, #ff6600, transparent);
-      animation: flicker 0.3s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.07); }
-      100% { transform: scale(1); }
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 0.9; }
-      50% { opacity: 0.5; }
-    }
-
-    .fixed-fire-button {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 999;
-      padding: 14px 28px;
-      font-size: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255, 100, 0, 0.6);
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-    }
-    .fixed-fire-button {
-  background-color: rgba(255, 0, 0, 0.8); /* màu nền kiểm tra */
-}
   </style>
 </head>
 <body>
@@ -191,64 +258,86 @@
     <div class="button-group">
       <a href="https://link.clashofclans.com/vi/?action=OpenClanProfile&tag=2LPV22V9J" target="_blank" class="custom-button">
         <img src="https://play-lh.googleusercontent.com/LByrur1mTmPeNr0ljI-uAUcct1rzmTve5Esau1SwoAzjBXQUby6uHIfHbF9TAT51mgHm" alt="Clan">
-        Join our CLAN
+        Watch our old CLAN
       </a>
       <a href="/base.html" class="custom-button">
         <img src="https://store.supercell.com/_next/static/media/clash-preview-store-support-figure.9576da5c.png" alt="VIP">
         Special
       </a>
     </div>
+
+    <div class="button-war-container">
+      <a href="/war.html" class="button-war">
+        Chiến tranh "Thân Thiện"
+      </a>
+    </div>
   </div>
 
+  <!-- Phần các section ẩn ban đầu -->
+  <div class="hidden-sections">
+    <div class="section">
+      <img src="img/main_clan.webp" alt="Ảnh 1">
+      <div class="text">Clan được thành lập vào 17/8/2023. Cách hơn 150 ngày khi tôi chơi Clash of Clans lại.</div>
+    </div>
 
-  <div class="section">
-    <img src="img/main_clan.webp" alt="Ảnh 1">
-    <div class="text">Clan được thành lập vào 17/8/2023. Cách hơn 150 ngày khi tôi chơi Clash of Clans lại.</div>
+    <div class="section">
+      <img src="img/main_kinhdo.webp" alt="Ảnh 2">
+      <div class="text">Chỉ với vỏn vẹn 9 tháng chơi, chúng tôi đã cày cấp kinh đô có thể gọi là nhanh...</div>
+    </div>
+
+    <div class="section">
+      <img src="img/history_cwl.webp" alt="Ảnh 3">
+      <div class="text">Trước đó chỉ với vọn vẹn trên dưới 30 người thì chúng tôi đánh lên Vàng 1...</div>
+    </div>
+
+    <div class="section">
+      <img src="img/streak_nor_war.webp" alt="Ảnh 4">
+      <div class="text">Chuỗi thắng, hoà khá nhiều. Hầu như rất ít trận thua do clan lúc trước rất là nhiệt tình.</div>
+    </div>
+
+    <div class="section">
+      <img src="img/admin_coc_2.jpg" alt="Ảnh 5">
+      <div class="text">Thủ lĩnh cả 2 Clan!!!</div>
+    </div>
   </div>
 
-  <div class="section">
-    <img src="img/main_kinhdo.webp" alt="Ảnh 2">
-    <div class="text">Chỉ với vỏn vẹn 9 tháng chơi, chúng tôi đã cày cấp kinh đô có thể gọi là nhanh...</div>
-  </div>
-
-  <div class="section">
-    <img src="img/history_cwl.webp" alt="Ảnh 3">
-    <div class="text">Trước đó chỉ với vọn vẹn trên dưới 30 người thì chúng tôi đánh lên Vàng 1...</div>
-  </div>
-
-  <div class="section">
-    <img src="img/streak_nor_war.webp" alt="Ảnh 4">
-    <div class="text">Chuỗi thắng, hoà khá nhiều. Hầu như rất ít trận thua do clan lúc trước rất là nhiệt tình.</div>
-  </div>
-
-  <div class="section">
-    <img src="img/admin_coc.webp" alt="Ảnh 5">
-    <div class="text">Và đây là Thủ Lĩnh Clan. Chính là tôi kk. Tôi chơi Clash Of CLans vào năm lớp 3 là thời từ 2015 nhưng tôi đã quên acc đó. 21/3/2023 tôi chơi lại và cũng nghỉ 1 thời gian do ôn thi tốt nghiệp và chán. Hiện tại tôi chơi lại với số cup không tưởng là 5112 cup và chỉ với Town Hall 12.</div>
-  </div>
-
-  <!-- Phần popup ảnh -->
+  <!-- Popup hình ảnh -->
   <div class="image-popup" id="imagePopup">
     <img src="" alt="Popup Image" id="popupImage">
   </div>
 
-  <!-- JavaScript để điều khiển popup ảnh -->
+  <!-- JavaScript -->
   <script>
+    // Popup ảnh
     const popup = document.getElementById('imagePopup');
     const popupImage = document.getElementById('popupImage');
-
     document.querySelectorAll('.section img').forEach(img => {
       img.addEventListener('click', (e) => {
         popupImage.src = e.target.src;
         popup.classList.add('show');
       });
     });
-
     popup.addEventListener('click', () => {
       popup.classList.remove('show');
-      setTimeout(() => {
-        popupImage.src = '';
-      }, 300);
+      setTimeout(() => popupImage.src = '', 300);
     });
+
+    // Hiện section khi scroll xuống
+    const hiddenSections = document.querySelector('.hidden-sections');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        hiddenSections.classList.add('show');
+      }
+    });
+
+
+    // button war
+
+    const warButton = document.querySelector('.button-war');
+  warButton.addEventListener('click', () => {
+    warButton.classList.add('shake');
+    setTimeout(() => warButton.classList.remove('shake'), 300);
+  });
   </script>
 </body>
 </html>
