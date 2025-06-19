@@ -306,6 +306,14 @@
     <img src="" alt="Popup Image" id="popupImage">
   </div>
 
+  
+    <!-- thêm nhạc -->
+
+        <audio id="bgMusic" autoplay loop>
+      <source src="/music/kill-this-love.mp3" type="audio/mpeg">
+      Trình duyệt của bạn không hỗ trợ audio.
+         </audio>
+
   <!-- JavaScript -->
   <script>
     // Popup ảnh
@@ -338,6 +346,19 @@
     warButton.classList.add('shake');
     setTimeout(() => warButton.classList.remove('shake'), 300);
   });
+
+
+  // nhac
+  window.addEventListener("click", function () {
+    const music = document.getElementById("bgMusic");
+    if (music.paused) {
+      music.play();
+    }
+  });
+
   </script>
+
+
+
 </body>
 </html>
